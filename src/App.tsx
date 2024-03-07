@@ -1,13 +1,12 @@
 import React from 'react'
 import './App.css'
+import { Header } from './components/Header'
 
 export const App: React.FC = () => {
 
   return (
     <>
-      <div className='bg-red-400 justify-center'>
-        <p>Aquí irá mi header</p>
-      </div>
+      <Header />
     </>
   )
 }
