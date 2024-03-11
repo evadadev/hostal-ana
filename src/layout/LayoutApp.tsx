@@ -1,15 +1,15 @@
 import React from "react";
 import { Header } from "../components/Header";
 import { Main } from "../components/Main";
+import { Footer } from "../components/Footer";
 
 export const Latyout: React.FC = () => {
 
     return (
-        <>
+        <div className="w-screen h-screen">
         <Header />
-        <Main >
-        </Main>
-        <footer>aquí va el footer con la inrmación de la página</footer>
-        </>
+        <Main />
+        <Footer />
+        </div>
     )
 }
