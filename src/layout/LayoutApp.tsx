@@ -1,15 +1,19 @@
 import React from "react";
 import { Header } from "../components/Header";
-import { Main } from "../components/Main";
 import { Footer } from "../components/Footer";
 
-export const Latyout: React.FC = () => {
+interface Props {
+    children: React.ReactNode;
+}
+
+export const Layout: React.FC<Props> = (props) => {
+    const { children } = props;
 
     return (
-        <div className="w-screen h-screen">
-        <Header />
-        <Main />
-        <Footer />
+        <div className="w-screen min-h-screen">
+            <Header />
+            <main>{children}</main>
+            <Footer />
         </div>
     )
 }
