@@ -1,11 +1,11 @@
 import React from 'react'
-import { Latyout } from './layout/LayoutApp'
+import { RouterComponent } from './route/roter.components';
 
 export const App: React.FC = () => {
 
   return (
     <>
-      <Latyout />
+      <RouterComponent />
     </>
   )
 }

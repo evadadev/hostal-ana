@@ -1,14 +1,18 @@
 import React from "react";
 import { Header } from "../components/Header";
-import { Main } from "../components/Main";
 import { Footer } from "../components/Footer";
 
-export const Latyout: React.FC = () => {
+interface Props {
+    children: React.ReactNode;
+}
+
+export const Layout: React.FC<Props> = (props) => {
+    const { children } = props;
 
     return (
-        <div className="w-screen h-screen">
+        <div className=" w-screen h-screen justify-between">
         <Header />
-        <Main />
+        <main className="mb-auto">{children}</main>
         <Footer />
         </div>
     )
