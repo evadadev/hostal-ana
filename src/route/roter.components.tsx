@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { switchroutes } from "./routes";
-import { HabitacionesPage } from "../pages/habitaciones";
-import { UbicacionPage } from "../pages/ubicacion";
-import { GaleriaPage } from "../pages/galeria";
-import { ContactoPage } from "../pages/contactos";
+import { HabitacionesPage } from "../pages/room";
+import { UbicacionPage } from "../pages/location";
+import { GaleriaPage } from "../pages/gallery";
+import { ContactoPage } from "../pages/contact";
 import { HomePage } from "../pages/home";
 
 export const RouterComponent: React.FC = () => {
