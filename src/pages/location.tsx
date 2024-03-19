@@ -6,7 +6,7 @@ export const UbicacionPage: React.FC = () => {
 
     return (
         <Layout>
-            <div className=" flex flex-col gap-10 items-center z-10  w-screen h-auto p-5">
+            <div className="flex flex-col gap-5 mt-10 items-center z-10 w-screen h-auto">
                 <div className=" flex flex-col items-center text-2xl text-secundary w-9/12">La localización perfecta</div>
                 <hr className="h-1.5 w-32 mt-1 bg-primary"/>
                 <div className="text-grey-ligth w-9/12">
