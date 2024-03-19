@@ -5,7 +5,7 @@ export const ContactoPage: React.FC = () => {
 
     return (
         <Layout>
-            <div className=" flex flex-col gap-5 items-center z-10 w-screen h-auto">
+            <div className=" flex flex-col gap-5 mt-10 items-center z-10 w-screen h-auto">
                 <div className=" flex flex-col items-center text-2xl text-secundary w-9/12">Contacta con nosotros</div>
                 <hr className="h-1.5 w-32 mt-1 bg-primary"/>
                 <p className="text-grey-ligth w-9/12 text-justify">Puedes realizar tus consultasa o sugerencias tanto por teléfono como por correo electrónico o utilizando el formulario de contacto que ponemos a su disposición</p>
