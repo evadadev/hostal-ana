@@ -3,7 +3,7 @@ import React from "react";
 export const Footer: React.FC = () => {
 
     return(
-        <footer className=" flex justify-center w-full h-32 gap-28 mt-6 bg-yellow-700">
+        <footer className=" flex justify-center w-full h-32 gap-28 mt-6 bg-primary">
             <ul className="flex flex-col justify-center items-center text-white">
                 <li>DIRECCIÓN</li>
                 <li>Nerja, Málaga</li>
