@@ -1,13 +1,14 @@
 import React from "react";
 import { Layout } from "../layout/LayoutApp";
+import { HeaderPage } from "../components/HeaderPage";
+import { WrapperPage } from "../components/WrapperPage";
 
 export const ContactoPage: React.FC = () => {
 
     return (
         <Layout>
-            <div className=" flex flex-col gap-5 mt-10 items-center z-10 w-screen h-auto">
-                <div className=" flex flex-col items-center text-2xl text-secundary w-9/12">Contacta con nosotros</div>
-                <hr className="h-1.5 w-32 mt-1 bg-primary"/>
+            <WrapperPage>
+                <HeaderPage name="Contacta con nosotros"/>
                 <p className="text-grey-ligth w-9/12 text-justify">Puedes realizar tus consultasa o sugerencias tanto por teléfono como por correo electrónico o utilizando el formulario de contacto que ponemos a su disposición</p>
             <form className=" w-9/12">
                 <div className="flex flex-col items-center w-full gap-4 sm:grid-cols-6">
@@ -42,7 +43,7 @@ export const ContactoPage: React.FC = () => {
                     <button type="submit" className="text-sm font-medium bg-primary border-slate-300 text-white px-4 py-2 rounded">Enviar</button>
                 </div>
             </form>
-            </div>
+            </WrapperPage>
         </Layout>
     )
 }
