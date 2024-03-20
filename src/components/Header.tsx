@@ -5,7 +5,7 @@ import { switchroutes } from "../route/routes";
 export const Header: React.FC = () => {
 
     return (        
-        <div className="flex flex-row justify-center items-center gap-10 w-full h-24  text-primary">
+        <header className="flex flex-row justify-center items-center gap-10 w-full h-24  text-primary">
             <Link to={switchroutes.room}>Habitaciones</Link>
             <Link to={switchroutes.location}>Ubicación</Link>
             <Link to={switchroutes.root} className="flex flex-col items-center gap-1">
@@ -14,6 +14,6 @@ export const Header: React.FC = () => {
             </Link>
             <Link to={switchroutes.gallery}>Galería</Link>
             <Link to={switchroutes.contact}>Contactos</Link>
-        </div>
+        </header>
     )
 }
