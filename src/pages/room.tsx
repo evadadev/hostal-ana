@@ -2,6 +2,8 @@ import React from "react";
 import { Layout } from "../layout/LayoutApp";
 import { RoomCard } from "../components/RoomCard";
 import habitacion1 from '../assets/habitacion1.png'
+import { HeaderPage } from "../components/HeaderPage";
+import { WrapperPage } from "../components/WrapperPage";
 
 
 export const HabitacionesPage: React.FC = () => {
@@ -22,13 +24,12 @@ export const HabitacionesPage: React.FC = () => {
 
     return (
         <Layout>
-            <div className="flex flex-col gap-5 mt-10 items-center z-10 w-screen h-auto">
-                <div className=" flex flex-col items-center text-2xl text-secundary w-9/12">Caracteristicas de las habitaciones</div>
-                <hr className="h-1.5 w-32 mt-1 bg-primary"/>
+            <WrapperPage>
+                <HeaderPage name="Caracteristicas de las habitaciones"/>
                 {rooms.map(room => (
                     <RoomCard room={room}/>
                 ))}
-            </div>
+            </WrapperPage>
         </Layout>
     )
 }
