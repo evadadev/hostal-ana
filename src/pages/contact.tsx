@@ -4,6 +4,10 @@ import { HeaderPage } from "../components/HeaderPage";
 import { WrapperPage } from "../components/WrapperPage";
 
 export const ContactoPage: React.FC = () => {
+    const [ name, setName] = React.useState("");
+    const [ email, setEmail] = React.useState("");
+    const [ phone, setPhone] = React.useState("");
+
 
     return (
         <Layout>
@@ -14,15 +18,15 @@ export const ContactoPage: React.FC = () => {
                 <div className="flex flex-col items-center w-full gap-4 sm:grid-cols-6">
                     <div className="w-full">
                         <label htmlFor="username" className=" text-sm font-medium leading-6 text-secundary">Nombre*</label>
-                        <input type="text" name="username" id="username" autoComplete="Nombre" className=" flex-1 w-full border-slate-300 text-secundary placeholder:text-grey-ligth focus:right-0 sm:text-sm sm:leading-6"/>
+                        <input type="text" value={name} onChange={(e) => setName(e.target.value)} name="username" id="username" autoComplete="Nombre" className=" flex-1 w-full border-slate-300 text-secundary placeholder:text-grey-ligth focus:right-0 sm:text-sm sm:leading-6"/>
                     </div>
                     <div className="w-full">
                         <label htmlFor="email" className=" text-sm font-medium  text-secundary">Email*</label>
-                        <input type="email" name="email" id="email" autoComplete="Email" className=" flex-1 w-full border-slate-300 text-secundary placeholder:text-grey-ligth sm:text-sm sm:leading-6"/>
+                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} name="email" id="email" autoComplete="Email" className=" flex-1 w-full border-slate-300 text-secundary placeholder:text-grey-ligth sm:text-sm sm:leading-6"/>
                     </div>
                     <div className="w-full">
                         <label htmlFor="phone" className="text-sm font-medium  text-secundary">Teléfono*</label>
-                        <input type="text" name="phone" id="phone" autoComplete="Phone" className="flex-1 w-full border-slate-300 text-secundary placeholder:text-grey-ligth sm:text-sm sm:leading-6"/>
+                        <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} name="phone" id="phone" autoComplete="Phone" className="flex-1 w-full border-slate-300 text-secundary placeholder:text-grey-ligth sm:text-sm sm:leading-6"/>
                     </div>
                     <div className="w-full">
                         <label htmlFor="message" className="text-sm font-medium leading-6 text-secundary">Mensaje</label>
