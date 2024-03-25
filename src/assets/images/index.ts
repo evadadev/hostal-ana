@@ -10,8 +10,6 @@ import terraza from './terraza.jpg';
 import patio from './patio.jpg';
 import aseo from './aseo.jpg';
 
-// import habitacionAna from './habitacion-ana.jpg';
-
 export default {
     habitacionAna,
     habitacionAna2,
