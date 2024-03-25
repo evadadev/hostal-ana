@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout } from "../layout/LayoutApp";
 import { RoomCard } from "../components/RoomCard";
-import habitacion1 from '../assets/habitacion1.png'
+import images from '../assets/images'
 import { HeaderPage } from "../components/HeaderPage";
 import { WrapperPage } from "../components/WrapperPage";
 
@@ -12,12 +12,12 @@ export const HabitacionesPage: React.FC = () => {
         {
             name:"Habitación individual",
             description:"Las habitaciones son sencillas y disponen en algunos casos, balcón francés o terraza cerada.",
-            img: habitacion1
+            img: images.habitacionAna
         },
         {
             name:"Habitación doble",
             description:"Las habitaciones superiores cuentan con zona de descanso y cocina básica. Tienen capacidad para 4 personas previa solicitud.",
-            img: habitacion1
+            img: images.habitacionDoble
         }
 
     ]
