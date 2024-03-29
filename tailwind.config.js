@@ -11,6 +11,7 @@ export default {
         'primary': 'rgb(161 98 7)',
         'secundary': '#6b7280',
         'grey-ligth': '#9ca3af',
+        'black-modal': 'rgb(0 0 0 / 0.8)',
       }
     },
   },

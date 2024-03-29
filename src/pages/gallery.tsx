@@ -70,7 +70,7 @@ export const GaleriaPage: React.FC = () => {
                 <div className="grid grid-cols-3 gap-4 w-9/12 place-self-auto mt-5"> 
                 {photos.map(photo => (<img src={photo.image} className="hover:opacity-50" onClick={() => openModal(photo.image)}/>))}
                 {isModalOpen && (
-                    <div className="fixed inset-0 flex items-center justify-center z-10 bg-black opacity-80" onClick={closeModal} >
+                    <div className="fixed inset-0 flex items-center justify-center z-10 bg-black-modal" onClick={closeModal} >
                             <img
                             className="flex w-[50%] " 
                             src={imgModal} 
