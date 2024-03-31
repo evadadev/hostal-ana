@@ -10,7 +10,7 @@ export const Layout: React.FC<Props> = (props) => {
     const { children } = props;
 
     return (
-        <div className="w-screen min-h-screen">
+        <div>
             <Header />
             <main>{children}</main>
             <Footer />
