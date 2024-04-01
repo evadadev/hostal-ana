@@ -32,12 +32,23 @@ export const ContactoPage: React.FC = () => {
         })
     }
 
+    const handleFormSubmit = () => {
+        const recipient = 'dev.eavada@gmail.com';
+        const subject = 'Resultados del formulario';
+        const body = `Nombre: ${data.name}\nEmail: ${data.email}\nMensaje: ${data.message}`;
+  
+    const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  
+    window.location.href = mailtoLink;
+  };
+  
+
     return (
         <Layout>
             <WrapperPage>
                 <HeaderPage name="Contacta con nosotros"/>
                 <p className="text-grey-ligth w-9/12 text-justify">Puedes realizar tus consultasa o sugerencias tanto por teléfono como por correo electrónico o utilizando el formulario de contacto que ponemos a su disposición</p>
-            <form className=" w-9/12">
+            <form className=" w-9/12" onSubmit={handleFormSubmit}>
                 <div className="flex flex-col items-center w-full gap-4 sm:grid-cols-6">
                     <div className="w-full">
                         <label htmlFor="username" className=" text-sm font-medium leading-6 text-secundary">Nombre*</label>
