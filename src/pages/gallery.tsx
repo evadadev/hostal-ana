@@ -11,7 +11,7 @@ interface imageInterface  {
     image: string
 }
 
-export const GaleriaPage: React.FC = () => {
+export const GalleryPage: React.FC = () => {
     const [ isModalOpen, setIsModalOpen ] = React.useState(false);
     const [ imgModal, setImgModal ] = React.useState({id: 0, image: ""});
 

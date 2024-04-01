@@ -5,7 +5,7 @@ import images from '../assets/images'
 import { HeaderPage } from "../components/HeaderPage";
 import { WrapperPage } from "../components/WrapperPage";
 
-export const HabitacionesPage: React.FC = () => {
+export const RoomsPage: React.FC = () => {
 
     const rooms = [
         {

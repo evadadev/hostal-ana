@@ -4,7 +4,7 @@ import { Map } from "../components/Map";
 import { HeaderPage } from "../components/HeaderPage";
 import { WrapperPage } from "../components/WrapperPage";
 
-export const UbicacionPage: React.FC = () => {
+export const LocationPage: React.FC = () => {
 
     return (
         <Layout>
