@@ -34,14 +34,11 @@ export const ContactoPage: React.FC = () => {
 
     const handleFormSubmit = () => {
         const recipient = 'dev.eavada@gmail.com';
-        const subject = 'Resultados del formulario';
-        const body = `Nombre: ${data.name}\nEmail: ${data.email}\nMensaje: ${data.message}`;
-  
-    const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  
-    window.location.href = mailtoLink;
-  };
-  
+        const body = `Nombre: ${data.name}\nEmail: ${data.email}\nMensaje: ${data.message}`; 
+        const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(data.option)}&body=${encodeURIComponent(body)}`;
+    
+        window.location.href = mailtoLink;
+    };
 
     return (
         <Layout>
