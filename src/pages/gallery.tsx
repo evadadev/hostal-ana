@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Layout } from "../layout/LayoutApp";
 import { HeaderPage } from "../components/HeaderPage";
 import { WrapperPage } from "../components/WrapperPage";
@@ -12,8 +12,13 @@ interface imageInterface  {
 }
 
 export const GalleryPage: React.FC = () => {
+
     const [ isModalOpen, setIsModalOpen ] = React.useState(false);
     const [ imgModal, setImgModal ] = React.useState({id: 0, image: ""});
+
+    useEffect(() => {
+        document.title = 'Galería | Hostal Ana Nerja';
+    }, [])
 
     const openModal = (photo: imageInterface) => { 
         setImgModal(photo)

@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Layout } from "../layout/LayoutApp";
 import { HeaderPage } from "../components/HeaderPage";
 import { WrapperPage } from "../components/WrapperPage";
 
 export const ContactPage: React.FC = () => {
     const [ data, setData] = React.useState({name: "", email: "", phone: "", message: "", option: "", accept: false});
+
+    useEffect(() => {
+        document.title = 'Contacto | Hostal Ana Nerja';
+    }, [])
 
     const setFormData = (e: React.ChangeEvent<HTMLInputElement>, key: string) => {
         setData({
