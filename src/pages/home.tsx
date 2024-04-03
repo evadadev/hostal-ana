@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Layout } from "../layout/LayoutApp";
 
 export const HomePage: React.FC = () => {
+    useEffect(() => {
+        document.title = 'Hostal Ana Nerja'
+    }, [])
 
     return (
         <Layout>

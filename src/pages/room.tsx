@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Layout } from "../layout/LayoutApp";
 import { RoomCard } from "../components/RoomCard";
 import images from '../assets/images'
 import { HeaderPage } from "../components/HeaderPage";
 import { WrapperPage } from "../components/WrapperPage";
 
-export const HabitacionesPage: React.FC = () => {
+export const RoomsPage: React.FC = () => {
+
+    useEffect(() => {
+        document.title = 'Habitaciones | Hostal Ana Nerja'
+    }, [])
 
     const rooms = [
         {

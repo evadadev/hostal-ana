@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Layout } from "../layout/LayoutApp";
 import { Map } from "../components/Map";
 import { HeaderPage } from "../components/HeaderPage";
 import { WrapperPage } from "../components/WrapperPage";
 
-export const UbicacionPage: React.FC = () => {
+export const LocationPage: React.FC = () => {
+
+    useEffect(() => {
+        document.title = 'Ubicación | Hostal Ana Nerja';
+    }, [])
 
     return (
         <Layout>
