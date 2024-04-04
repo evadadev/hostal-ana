@@ -2,6 +2,7 @@ import React from "react";
 import { Room } from "./room.vm"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faWifi, faRadio, faTv, faFan, faPhone, faBathtub } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 
 
 interface Props {
@@ -10,6 +11,7 @@ interface Props {
 
 export const RoomCard: React.FC<Props> = (props) => {
     const { room } = props;
+    const { t } = useTranslation();
 
     return (
         <div className=" bg-slate-50 w-10/12 h-full flex flex-row p-10">
@@ -20,27 +22,27 @@ export const RoomCard: React.FC<Props> = (props) => {
                 <div className="text-grey-ligth grid grid-cols-2 gap-5">
                     <div className="flex flex-row gap-4 text-secundary">
                         <FontAwesomeIcon icon={faWifi} />
-                        <p> Internet Wifi gratis</p>
+                        <p>{t('iconInternet')}</p>
                     </div>
                     <div className="flex flex-row gap-4 text-secundary">
                     <FontAwesomeIcon icon={faRadio} />
-                        <p>Hilo musical</p>
+                        <p>{t('iconRadio')}</p>
                     </div>
                     <div className="flex flex-row gap-4 text-secundary">
                         <FontAwesomeIcon icon={faTv} />
-                        <p>Televisión por satélite</p>
+                        <p>{t('iconTelevision')}</p>
                     </div>
                     <div className="flex flex-row gap-4 text-secundary">
                         <FontAwesomeIcon icon={faFan} />
-                        <p>Aire acondicionado</p>
+                        <p>{t('iconAireAcondicionado')}</p>
                     </div>
                     <div className="flex flex-row gap-4 text-secundary">
                         <FontAwesomeIcon icon={faPhone} />
-                        <p>Teléfono</p>
+                        <p>{t('iconTelefono')}</p>
                     </div>
                     <div className="flex flex-row gap-4 text-secundary">
                         <FontAwesomeIcon icon={faBathtub} />
-                        <p>Baño privado</p>
+                        <p>{t('iconBaño')}</p>
                     </div>
                 </div>
             </div>

@@ -5,6 +5,7 @@ import { WrapperPage } from "../components/WrapperPage";
 import images from '../assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft, faAngleRight, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 
 interface imageInterface  {
     id: number,
@@ -15,9 +16,10 @@ export const GalleryPage: React.FC = () => {
 
     const [ isModalOpen, setIsModalOpen ] = React.useState(false);
     const [ imgModal, setImgModal ] = React.useState({id: 0, image: ""});
+    const { t } = useTranslation();
 
     useEffect(() => {
-        document.title = 'Galería | Hostal Ana Nerja';
+        document.title = t('galeria') + ' | Hostal Ana Nerja';
     }, [])
 
     const openModal = (photo: imageInterface) => { 
@@ -95,8 +97,8 @@ export const GalleryPage: React.FC = () => {
     return (
         <Layout>
             <WrapperPage>
-                <HeaderPage name="Galería"/>
-                <p className="text-grey-ligth w-9/12 text-justify">En nuestro hostal encontrarás todas las comodidades y entorno familiar, contando con una terraza donde podrás ver las fantasticas vistas a uno de los pueblos más bonitos y con encanto de todo el sur de España</p>
+                <HeaderPage name={t('galeria')}/>
+                <p className="text-grey-ligth w-9/12 text-justify">{t('textGaleria')}</p>
                 <div className="grid grid-cols-3 gap-4 w-9/12 place-self-auto mt-5"> 
                 {photos.map(photo => (<img src={photo.image} className="hover:opacity-50" onClick={() => openModal(photo)}/>))}
                 {isModalOpen && (
