@@ -9,7 +9,7 @@ export const Header: React.FC = () => {
     const { t } = useTranslation();
 
     return (  
-        <header >
+        <header className="sticky top-0 z-40 bg-white">
             <nav className="flex flex-row justify-center items-center gap-10 w-full h-24  text-primary">
                 <Link to={switchroutes.room}>{t('habitaciones')}</Link>
                 <Link to={switchroutes.location}>{t('ubicacion')}</Link>
