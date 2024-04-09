@@ -4,22 +4,25 @@ import { RoomCard } from "../components/RoomCard";
 import images from '../assets/images'
 import { HeaderPage } from "../components/HeaderPage";
 import { WrapperPage } from "../components/WrapperPage";
+import { useTranslation } from "react-i18next";
 
 export const RoomsPage: React.FC = () => {
+    
+    const { t } = useTranslation();
 
     useEffect(() => {
-        document.title = 'Habitaciones | Hostal Ana Nerja'
+        document.title = t('habitaciones') + ' | Hostal Ana Nerja'
     }, [])
 
     const rooms = [
         {
-            name:"Habitación individual",
-            description:"Las habitaciones son sencillas y disponen en algunos casos, balcón francés o terraza cerada.",
+            name: t('habitacionSimple'),
+            description: t('despripcionHabSimple'),
             img: images.habitacionAna
         },
         {
-            name:"Habitación doble",
-            description:"Las habitaciones superiores cuentan con zona de descanso y cocina básica. Tienen capacidad para 4 personas previa solicitud.",
+            name: t('habitacionDoble'),
+            description: t('despripcionHabDoble'),
             img: images.habitacionDoble
         }
 
@@ -28,7 +31,7 @@ export const RoomsPage: React.FC = () => {
     return (
         <Layout>
             <WrapperPage>
-                <HeaderPage name="Caracteristicas de las habitaciones"/>
+                <HeaderPage name={t('cabeceraHabitaciones')}/>
                 {rooms.map(room => (
                     <RoomCard room={room}/>
                 ))}
