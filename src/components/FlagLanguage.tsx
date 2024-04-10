@@ -8,6 +8,9 @@ export const FlagLanguage: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const { t } = useTranslation();
 
+    const isSpanish = () => currentLanguage === 'es'
+        
+
     const changeLanguage = (lang: string) => {
         i18n.changeLanguage(lang);
         setCurrentLanguage(lang);
@@ -24,21 +27,21 @@ export const FlagLanguage: React.FC = () => {
     return (      
                 <div className="absolute z-20 right-4 top-4 bg-white border border-gray-200 shadow-lg rounded">
                     <button className="flex items-center gap-2 px-4 py-2 text-gray-800 hover:bg-gray-100" onClick={toggleMenu}>
-                        {currentLanguage === 'es' ? <ES className="w-4 h-4" /> : <GB className="w-4 h-4" />}
-                        {currentLanguage === 'es' ? t('español') : t('ingles')}
+                        {isSpanish() ? <ES className="w-4 h-4" /> : <GB className="w-4 h-4" />}
+                        {isSpanish() ? t('español') : t('ingles')}
                     </button>
                     {isOpen && (
                     <div >
-                        {currentLanguage !== 'es' && (
+                        {!isSpanish() && (
                         <button className="flex items-center gap-2 px-4 py-2 w-full text-gray-800 hover:bg-gray-100" 
                             onClick={() => openFlag('es')}
-                            disabled={currentLanguage === 'es'}>
+                            disabled={isSpanish()}>
                         <ES className="w-4 h-4" />{t('español')}</button>
                         )}
-                        {currentLanguage !== 'en' && (
+                        {isSpanish() && (
 
                         <button className="flex items-center gap-2 px-4 py-2 w-full text-gray-800 hover:bg-gray-100" 
-                        onClick={() => openFlag('en')} disabled={currentLanguage === 'en'}>
+                        onClick={() => openFlag('en')} disabled={!isSpanish()}>
                         <GB className="w-4 h-4"/>{t('ingles')}</button>
                         )}
                     </div>    
