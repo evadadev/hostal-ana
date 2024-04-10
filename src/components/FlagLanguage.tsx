@@ -28,7 +28,7 @@ export const FlagLanguage: React.FC = () => {
                 <div className="absolute z-20 right-4 top-4 bg-white border border-gray-200 shadow-lg rounded">
                     <button className="flex items-center gap-2 px-4 py-2 text-gray-800 hover:bg-gray-100" onClick={toggleMenu}>
                         {isSpanish() ? <ES className="w-4 h-4" /> : <GB className="w-4 h-4" />}
-                        {isSpanish() ? t('español') : t('ingles')}
+                        {isSpanish() ? t('espanol') : t('ingles')}
                     </button>
                     {isOpen && (
                     <div >
@@ -36,7 +36,7 @@ export const FlagLanguage: React.FC = () => {
                         <button className="flex items-center gap-2 px-4 py-2 w-full text-gray-800 hover:bg-gray-100" 
                             onClick={() => openFlag('es')}
                             disabled={isSpanish()}>
-                        <ES className="w-4 h-4" />{t('español')}</button>
+                        <ES className="w-4 h-4" />{t('espanol')}</button>
                         )}
                         {isSpanish() && (
 
