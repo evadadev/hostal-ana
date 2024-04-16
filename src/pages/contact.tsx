@@ -50,8 +50,8 @@ export const ContactPage: React.FC = () => {
         <Layout>
             <WrapperPage>
                 <HeaderPage name={t('cabeceraContacto')}/>
-                <p className="text-grey-ligth w-9/12 text-justify">{t('pContacto')}</p>
-            <form className=" w-9/12" onSubmit={handleFormSubmit}>
+                <p className="text-grey-ligth md:w-9/12 text-justify">{t('pContacto')}</p>
+            <form className="w-full md:w-9/12" onSubmit={handleFormSubmit}>
                 <div className="flex flex-col items-center w-full gap-4 sm:grid-cols-6">
                     <div className="w-full">
                         <label htmlFor="username" className=" text-sm font-medium leading-6 text-secundary">{t('labelNombre')}</label>

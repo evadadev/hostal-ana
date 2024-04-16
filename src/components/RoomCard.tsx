@@ -14,12 +14,14 @@ export const RoomCard: React.FC<Props> = (props) => {
     const { t } = useTranslation();
 
     return (
-        <div className=" bg-slate-50 w-10/12 h-full flex flex-row p-10">
-            <div className="flex flex-col gap-6 w-3/5">
-                <h3 className="text-secundary uppercase font-bold">{room.name}</h3>
-                <p className="text-grey-ligth">{room.description}                
-                </p>
-                <div className="text-grey-ligth grid grid-cols-2 gap-5">
+        <>
+        <div className="bg-slate-50 flex flex-col gap-4 lg:w-9/12">
+            <h3 className="text-secundary uppercase font-bold mt-5 mx-5">{room.name}</h3>
+            <div className="flex flex-col-reverse gap-2 lg:gap-6 lg:flex-row mx-5 mb-5">
+                <div className=" flex flex-col gap-3">
+                <p className="text-grey-ligth">{room.description}</p>
+                
+                <div className="text-grey-ligth grid grid-cols-1 gap-1 sm:grid-cols-2 lg:gap-5">
                     <div className="flex flex-row gap-4 text-secundary">
                         <FontAwesomeIcon icon={faWifi} />
                         <p>{t('iconInternet')}</p>
@@ -45,8 +47,11 @@ export const RoomCard: React.FC<Props> = (props) => {
                         <p>{t('iconBaño')}</p>
                     </div>
                 </div>
+                </div>
+            <img src={room.img} alt="image-room" className="w-full lg:w-1/2"/>
             </div>
-            <img src={room.img} alt="image-room" className="w-2/5 ml-6"/>
+            
         </div>
+        </>
     )
 }

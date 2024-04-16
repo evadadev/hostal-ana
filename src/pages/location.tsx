@@ -16,7 +16,7 @@ export const LocationPage: React.FC = () => {
         <Layout>
             <WrapperPage>
                 <HeaderPage name={t('cabeceraUbicaion')}/>
-                <div className="text-grey-ligth w-9/12">
+                <div className="text-grey-ligth md:w-9/12">
                     <p>{t('textUbicacion1')}</p>
                     <p>{t('textUbicacion2')}</p>
                     <p>{t('textUbicacion3')}</p>
