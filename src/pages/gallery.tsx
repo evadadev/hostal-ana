@@ -98,8 +98,8 @@ export const GalleryPage: React.FC = () => {
         <Layout>
             <WrapperPage>
                 <HeaderPage name={t('galeria')}/>
-                <p className="text-grey-ligth w-9/12 text-justify">{t('textGaleria')}</p>
-                <div className="grid grid-cols-3 gap-4 w-9/12 place-self-auto mt-5"> 
+                <p className="text-grey-ligth md:w-9/12 text-justify">{t('textGaleria')}</p>
+                <div className="grid grid-cols-3 gap-4 md:w-9/12 place-self-auto mt-5"> 
                 {photos.map(photo => (<img src={photo.image} className="hover:opacity-50" onClick={() => openModal(photo)}/>))}
                 {isModalOpen && (
                     <>
