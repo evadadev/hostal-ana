@@ -39,6 +39,8 @@ const resources = {
       textHome: ' Featuring WiFi throughout the property, the 2-star Hostal Ana - Adults Recommended Nerja is less than a 12-minute walk from Burriana Beach. Located in the very heart of Nerja, this pension is relatively close to the Nerja Museum. The Balcón de Europa Square is a 10-minute walk from the hotel and Malaga Airport is 75 km away. Nature lovers will appreciate the proximity to Playa El Salón, which is about 1 km away. The location 2 km from the Águila Aqueduct is an advantage for guests staying at the accommodation. Hostal Ana - Adults Recommended is well connected to many places of interest, within walking distance of the Fuente Hostal Ermita bus stop.',
       espanol: 'Spanish',
       ingles: 'English',
+      inicio: 'Home',
+      cerrar: 'CLOSE',
     }
   },
   es: {
@@ -78,6 +80,8 @@ const resources = {
       textHome: 'Teniendo WiFi en toda la propiedad, el Hostal Ana - Adults Recommended Nerja, de 2 estrellas, está a menos de 12 minutos a pie de la Playa de Burriana. Situado en el mismísimo corazón de Nerja, esta pensión está relativamente cerca del Museo de Nerja. La plaza Balcón de Europa se encuentra a 10 minutos andando del hotel y el aeropuerto Málaga se sitúa a 75 km. Los amantes de la naturaleza apreciarán la proximidad de la Playa El Salón, que está a unos 1 km de distancia. La ubicación a 2 km del Acueducto del Águila es una ventaja para los huéspedes que se alojen en el alojamiento. El Hostal Ana - Adults Recommended está bien conectado con numerosos lugares de interés, a poca distancia andando de la parada de autobús la Fuente Hostal Ermita.',
       espanol: 'Español',
       ingles: 'Inglés',
+      inicio: 'Inicio',
+      cerrar: 'CERRAR',
     }
   }
 };

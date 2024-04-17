@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Layout } from "../layout/LayoutApp";
-import { HeaderPage } from "../components/HeaderPage";
+import { TitlePage } from "../components/TitlePage";
 import { WrapperPage } from "../components/WrapperPage";
 import { useTranslation } from "react-i18next";
 
@@ -49,7 +49,7 @@ export const ContactPage: React.FC = () => {
     return (
         <Layout>
             <WrapperPage>
-                <HeaderPage name={t('cabeceraContacto')}/>
+                <TitlePage name={t('cabeceraContacto')}/>
                 <p className="text-grey-ligth md:w-9/12 text-justify">{t('pContacto')}</p>
             <form className="w-full md:w-9/12" onSubmit={handleFormSubmit}>
                 <div className="flex flex-col items-center w-full gap-4 sm:grid-cols-6">

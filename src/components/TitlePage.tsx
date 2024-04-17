@@ -4,7 +4,7 @@ interface Props {
     name: string
 }
 
-export const HeaderPage: React.FC<Props> = (props) => {
+export const TitlePage: React.FC<Props> = (props) => {
     const { name } = props;
 
     return(       

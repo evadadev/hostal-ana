@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Layout } from "../layout/LayoutApp";
-import { HeaderPage } from "../components/HeaderPage";
+import { TitlePage } from "../components/TitlePage";
 import { WrapperPage } from "../components/WrapperPage";
 import images from '../assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -97,7 +97,7 @@ export const GalleryPage: React.FC = () => {
     return (
         <Layout>
             <WrapperPage>
-                <HeaderPage name={t('galeria')}/>
+                <TitlePage name={t('galeria')}/>
                 <p className="text-grey-ligth md:w-9/12 text-justify">{t('textGaleria')}</p>
                 <div className="grid grid-cols-3 gap-4 md:w-9/12 place-self-auto mt-5"> 
                 {photos.map(photo => (<img src={photo.image} className="hover:opacity-50" onClick={() => openModal(photo)}/>))}

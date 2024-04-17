@@ -6,7 +6,7 @@ export const Footer: React.FC = () => {
     const { t } = useTranslation();
 
     return(
-        <footer className=" flex justify-center w-full h-32 gap-28 mt-6 bg-primary">
+        <footer className="flex justify-center w-full h-24 gap-3 md:gap-28 bg-primary">
             <ul className="flex flex-col justify-center items-center text-white">
                 <li className="uppercase">{t('direccion')}</li>
                 <li>Nerja, Málaga</li>
