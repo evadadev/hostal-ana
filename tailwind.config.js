@@ -12,6 +12,9 @@ export default {
         'secundary': '#6b7280',
         'grey-ligth': '#9ca3af',
         'black-modal': 'rgb(0 0 0 / 0.8)',
+      },
+      minHeight: {
+        'mainScrren': 'calc(100vh - 190px)',
       }
     },
   },

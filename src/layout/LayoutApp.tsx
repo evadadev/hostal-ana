@@ -12,7 +12,7 @@ export const Layout: React.FC<Props> = (props) => {
     return (
         <div>
             <Header />
-            <main>{children}</main>
+            <main className="min-h-mainScrren">{children}</main>
             <Footer />
         </div>
     )
