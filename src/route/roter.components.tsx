@@ -6,6 +6,7 @@ import { LocationPage } from "../pages/location";
 import { GalleryPage } from "../pages/gallery";
 import { ContactPage } from "../pages/contact";
 import { HomePage } from "../pages/home";
+import { PoliticaPrivacidadPage } from "../pages/politicaPrivacidad";
 
 export const RouterComponent: React.FC = () => {
     return (
@@ -16,6 +17,7 @@ export const RouterComponent: React.FC = () => {
                 <Route path={switchroutes.location} element={<LocationPage />} />
                 <Route path={switchroutes.gallery} element={<GalleryPage />} />
                 <Route path={switchroutes.contact} element={<ContactPage />} />
+                <Route path={switchroutes.privacidad} element={<PoliticaPrivacidadPage />}/>
             </Routes>
         </Router>
     )
