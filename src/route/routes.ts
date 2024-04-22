@@ -4,6 +4,7 @@ interface SwitchRoutes {
     location: string;
     gallery: string;
     contact: string;
+    privacidad: string;
 }
 
 export const switchroutes: SwitchRoutes = {
@@ -12,4 +13,5 @@ export const switchroutes: SwitchRoutes = {
     location: "/ubicacion",
     gallery: "/galeria",
     contact: "/contacto",
+    privacidad: "/politicaPrivacidad",
 }
