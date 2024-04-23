@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faBed, faCamera, faEnvelope, faHouse, faLocationDot, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { switchroutes } from "../route/routes";
 import { Link } from "react-router-dom";
+import imgHostal from '../assets/images/imgHostal.png';
 import { FlagLanguage } from "./FlagLanguage";
 import { useTranslation } from "react-i18next";
 
@@ -23,7 +24,7 @@ export const SideBar: React.FC = () => {
         <div className="flex  flex-row justify-between items-center text-primary mx-4 rounded-full mt-2">
             <FontAwesomeIcon icon={faBars} onClick={handleOpen}/>
             <Link to={switchroutes.root} className="flex flex-col items-center gap-1">
-                    <img className="w-12 h-12" src="src/assets/imgHostal.png" alt="logotipo" />
+                    <img className="w-12 h-12" src={imgHostal} alt="logotipo" />
                     <span className="font-bold">HOSTAL ANA</span>
             </Link>
             <div className="flex">

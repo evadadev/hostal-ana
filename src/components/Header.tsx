@@ -4,6 +4,7 @@ import { switchroutes } from "../route/routes";
 import { useTranslation } from "react-i18next";
 import { FlagLanguage } from "./FlagLanguage";
 import { SideBar } from "./SideBar";
+import imgHostal from '../assets/images/imgHostal.png';
 
 export const Header: React.FC = () => {
 
@@ -16,7 +17,7 @@ export const Header: React.FC = () => {
                 <Link to={switchroutes.room}>{t('habitaciones')}</Link>
                 <Link to={switchroutes.location}>{t('ubicacion')}</Link>
                 <Link to={switchroutes.root} className="flex flex-col items-center gap-1">
-                    <img className="w-12 h-12" src="src/assets/imgHostal.png" alt="logotipo" />
+                    <img className="w-12 h-12" src={imgHostal} alt="logotipo" />
                     <span className="font-bold">HOSTAL ANA</span>
                 </Link>
                 <Link to={switchroutes.gallery}>{t('galeria')}</Link>
