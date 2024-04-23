@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import { switchroutes } from "./routes";
 import { RoomsPage } from "../pages/room";
 import { LocationPage } from "../pages/location";
@@ -10,7 +10,7 @@ import { PoliticaPrivacidadPage } from "../pages/politicaPrivacidad";
 
 export const RouterComponent: React.FC = () => {
     return (
-        <Router>
+        <HashRouter>
             <Routes>
                 <Route path={switchroutes.root} element={<HomePage />} />
                 <Route path={switchroutes.room} element={<RoomsPage />} />
@@ -19,6 +19,6 @@ export const RouterComponent: React.FC = () => {
                 <Route path={switchroutes.contact} element={<ContactPage />} />
                 <Route path={switchroutes.privacidad} element={<PoliticaPrivacidadPage />}/>
             </Routes>
-        </Router>
+        </HashRouter>
     )
 }
