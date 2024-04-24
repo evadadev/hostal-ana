@@ -42,7 +42,7 @@ export const ContactPage: React.FC = () => {
 
     const handleFormSubmit = () => {
         const recipient = 'dev.evada@gmail.com';
-        const body = `Nombre: ${data.name}\nEmail: ${data.email}\nMensaje: ${data.message}`; 
+        const body = `Nombre: ${data.name}\nEmail: ${data.email}\nTeléfono: ${data.phone}\nMensaje: ${data.message}`; 
         const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(data.option)}&body=${encodeURIComponent(body)}`;
     
         window.location.href = mailtoLink;
