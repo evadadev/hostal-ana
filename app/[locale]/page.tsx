@@ -1,6 +1,5 @@
 'use client';
 import React, { useEffect } from 'react';
-import './globals.css'
 import { useTranslation } from 'react-i18next';
 
 const RootPage = () => {
