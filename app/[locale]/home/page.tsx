@@ -11,7 +11,7 @@ const HomePage = () => {
 
     return (
             <div>
-                <div className="static w-full h-96 bg-cover bg-no-repeat bg-center bg-[url(https://solaga.es/wp-content/uploads/2023/10/nerja-casco-antiguo-scaled-1.jpeg)]">
+                <div className="static w-full h-96 bg-cover bg-no-repeat bg-center bg-[url(/home.jpeg)]">
                 </div>
                 <article className="flex flex-col  p-5 gap-3 text-grey-ligth">
                     <p className="text-base md:text-xl">{t('textHome1')}</p>

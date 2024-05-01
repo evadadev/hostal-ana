@@ -53,7 +53,7 @@ const GalleryPage = () => {
         },
         {
             id: 2,
-            image: "/habitacion-ana2jpg"
+            image: "/habitacion-ana2.jpg"
         },
         {
             id: 3,
@@ -83,10 +83,10 @@ const GalleryPage = () => {
             id: 9,
             image: "/terraza.jpg"
         },
-        {
-            id: 10,
-            image: "/patio.jpg"
-        },
+        // {
+        //     id: 10,
+        //     image: "/patio.jpg"
+        // },
         {
             id: 11,
             image: "aseo.jpg"

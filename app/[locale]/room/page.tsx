@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect } from "react";
+import React from "react";
 import { RoomCard } from "../components/RoomCard";
 import { TitlePage } from "../components/TitlePage";
 import { WrapperPage } from "../components/WrapperPage";
@@ -9,9 +9,9 @@ const RoomsPage = () => {
     
     const { t } = useTranslation();
 
-    useEffect(() => {
-        document.title = t('habitaciones') + ' | Hostal Ana Nerja'
-    }, [])
+    // useEffect(() => {
+    //     document.title = t('habitaciones') + ' | Hostal Ana Nerja'
+    // }, [])
 
     const rooms = [
         {
