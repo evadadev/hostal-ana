@@ -1,3 +1,4 @@
+'use client';
 import React from 'react'
 
 interface Form {
@@ -17,7 +18,7 @@ export const EmailTemplate: React.FC<Readonly<emailProps>> = (props) => {
     const body = `Nombre: ${form.name}\nEmail: ${form.email}\nTeléfono: ${form.phone}\nMensaje: ${form.message}`; 
     return (
         <div>
-            <h1>{form.option}</h1>
+            <h2>{form.option}</h2>
             <div>{body}</div>
         </div>
     )
