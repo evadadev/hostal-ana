@@ -4,47 +4,53 @@ import { useTranslation } from "react-i18next";
 import { TitlePage } from "../components/TitlePage";
 import { WrapperPage } from "../components/WrapperPage";
 import Link from "next/link";
+import { Resend } from "resend";
+import { EmailTemplate } from "../components/email-template";
 
 const ContactPage = () => {
-    const [ data, setData] = React.useState({name: "", email: "", phone: "", message: "", option: "", accept: false});
+    const [ dataForm, setDataForm] = React.useState({name: "", email: "", phone: "", message: "", option: "", accept: false});
     const { t } = useTranslation();
 
     useEffect(() => {
         document.title = t('contacto') + ' | Hostal Ana Nerja';
     }, [])
-
+    
     const setFormData = (e: React.ChangeEvent<HTMLInputElement>, key: string) => {
-        setData({
-            ...data,
+        setDataForm({
+            ...dataForm,
             [key]: e.target.value,
         })
     }
     const setFormTextarea = (e: React.ChangeEvent<HTMLTextAreaElement>, key: string) => {
-        setData({
-            ...data,
+        setDataForm({
+            ...dataForm,
             [key]: e.target.value,
         })
     }
     const setFormsSelec = (e: React.ChangeEvent<HTMLSelectElement>, key: string) => {
-        setData({
-            ...data,
+        setDataForm({
+            ...dataForm,
             [key]: e.target.value,
         })
     }
     const setFormsChecked = (e: React.ChangeEvent<HTMLInputElement>, key: string) => {
         console.log(e)
-        setData({
-            ...data,
+        setDataForm({
+            ...dataForm,
             [key]: e.target.checked,
         })
     }
 
-    const handleFormSubmit = () => {
-        const recipient = 'dev.evada@gmail.com';
-        const body = `Nombre: ${data.name}\nEmail: ${data.email}\nTeléfono: ${data.phone}\nMensaje: ${data.message}`; 
-        const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(data.option)}&body=${encodeURIComponent(body)}`;
-    
-        window.location.href = mailtoLink;
+    const resend = new Resend('re_VzFGwG6D_8V6ak8KUHsYsVdZLqXK5nDsw');
+
+    const handleFormSubmit = async() => {
+            const {data}= await resend.emails.send({
+                from: dataForm.email,
+                to: 'dev.evada@gmail.com',
+                subject: `Resere`,
+                react:EmailTemplate({ form: dataForm }) as React.ReactElement
+            })
+            console.log(data)
     };
 
     return (
@@ -55,15 +61,15 @@ const ContactPage = () => {
                 <div className="flex flex-col items-center w-full gap-4 sm:grid-cols-6">
                     <div className="w-full">
                         <label htmlFor="username" className=" text-sm font-medium leading-6 text-secundary">{t('labelNombre')}</label>
-                        <input type="text" required value={data.name} onChange={(e) => setFormData(e, "name")} name="username" id="username" autoComplete="Nombre" className=" flex-1 w-full border-slate-300 text-secundary placeholder:text-grey-ligth focus:right-0 sm:text-sm sm:leading-6"/>
+                        <input type="text" required value={dataForm.name} onChange={(e) => setFormData(e, "name")} name="username" id="username" autoComplete="Nombre" className=" flex-1 w-full border-slate-300 text-secundary placeholder:text-grey-ligth focus:right-0 sm:text-sm sm:leading-6"/>
                     </div>
                     <div className="w-full">
                         <label htmlFor="email" className=" text-sm font-medium  text-secundary">Email*</label>
-                        <input type="email" required value={data.email} onChange={(e) => setFormData(e, "email")} name="email" id="email" autoComplete="Email" className=" flex-1 w-full border-slate-300 text-secundary placeholder:text-grey-ligth sm:text-sm sm:leading-6"/>
+                        <input type="email" required value={dataForm.email} onChange={(e) => setFormData(e, "email")} name="email" id="email" autoComplete="Email" className=" flex-1 w-full border-slate-300 text-secundary placeholder:text-grey-ligth sm:text-sm sm:leading-6"/>
                     </div>
                     <div className="w-full">
                         <label htmlFor="phone" className="text-sm font-medium  text-secundary">{t('labelTelefono')}</label>
-                        <input type="text" required value={data.phone} onChange={(e) => setFormData(e, "phone")} name="phone" id="phone" autoComplete="Phone" className="flex-1 w-full border-slate-300 text-secundary placeholder:text-grey-ligth sm:text-sm sm:leading-6"/>
+                        <input type="text" required value={dataForm.phone} onChange={(e) => setFormData(e, "phone")} name="phone" id="phone" autoComplete="Phone" className="flex-1 w-full border-slate-300 text-secundary placeholder:text-grey-ligth sm:text-sm sm:leading-6"/>
                     </div>
                     <div className="w-full">
                         <label htmlFor="affair" className="text-sm font-medium text-secundary">{t('labelAsunto')}</label>
@@ -75,10 +81,10 @@ const ContactPage = () => {
                     </div>
                     <div className="w-full">
                         <label htmlFor="message" className="text-sm font-medium leading-6 text-secundary">{t('labelMensaje')}</label>
-                        <textarea name="message" id="message" autoComplete="message" value={data.message} onChange={(e) => setFormTextarea(e, "message")} className="w-full flex-1 border-slate-300 text-secundary placeholder:text-grey-ligth focus:right-0 sm:text-sm sm:leading-6" />
+                        <textarea name="message" id="message" autoComplete="message" value={dataForm.message} onChange={(e) => setFormTextarea(e, "message")} className="w-full flex-1 border-slate-300 text-secundary placeholder:text-grey-ligth focus:right-0 sm:text-sm sm:leading-6" />
                     </div>
                     <div className="flex flex-row">
-                        <input type="checkbox" checked={data.accept} required onChange={(e) => setFormsChecked(e, "accept")} className="h-4 w-4 rounded  border-slate-300 text-secundary"/>
+                        <input type="checkbox" checked={dataForm.accept} required onChange={(e) => setFormsChecked(e, "accept")} className="h-4 w-4 rounded  border-slate-300 text-secundary"/>
                         <p className="ml-2 text-sm font-medium text-primary">{t('politicaPrivacidad')}
                             <Link href="/politicaPrivacidad" className="underline-offset-1 font-bold text-primary cursor-pointer">{t('pPrivacidad')}</Link>
                         </p>                  
