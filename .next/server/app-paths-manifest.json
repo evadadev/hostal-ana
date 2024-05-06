@@ -1,1 +1,6 @@
-{}
+{
+  "/[locale]/gallery/page": "app/[locale]/gallery/page.js",
+  "/[locale]/page": "app/[locale]/page.js",
+  "/[locale]/contact/page": "app/[locale]/contact/page.js",
+  "/[locale]/room/page": "app/[locale]/room/page.js"
+}
