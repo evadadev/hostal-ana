@@ -7,10 +7,12 @@ import Link from "next/link";
 
 const ContactPage = () => {
     const [ data, setData] = React.useState({name: "", email: "", phone: "", message: "", option: "", accept: false});
+    const [showMessage, setShowMessage] = React.useState({status: false, success: false, content: ""})
     const { t } = useTranslation();
 
     useEffect(() => {
         document.title = t('contacto') + ' | Hostal Ana Nerja';
+        data.option = "Reservar"
     }, [])
 
     const setFormData = (e: React.ChangeEvent<HTMLInputElement>, key: string) => {
@@ -32,19 +34,23 @@ const ContactPage = () => {
         })
     }
     const setFormsChecked = (e: React.ChangeEvent<HTMLInputElement>, key: string) => {
-        console.log(e)
         setData({
             ...data,
             [key]: e.target.checked,
         })
     }
 
-    const handleFormSubmit = () => {
-        const recipient = 'dev.evada@gmail.com';
-        const body = `Nombre: ${data.name}\nEmail: ${data.email}\nTeléfono: ${data.phone}\nMensaje: ${data.message}`; 
-        const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(data.option)}&body=${encodeURIComponent(body)}`;
-    
-        window.location.href = mailtoLink;
+    const handleFormSubmit = async (event: { preventDefault: () => void }) => {
+        event.preventDefault()
+
+        const response = await fetch('api/send', {
+            method: 'POST',
+            body: JSON.stringify(data)
+        })
+
+        const content = response.ok ? "El mensaje fue enviado correctamente" : "El mensaje no pudo ser enviado"
+
+        setShowMessage({status: true, success:response.ok, content})
     };
 
     return (
@@ -86,6 +92,7 @@ const ContactPage = () => {
                     <button type="submit" className="text-sm font-medium bg-primary border-slate-300 text-white px-4 py-2 rounded">{t('enviar')}</button>
                 </div>
             </form>
+            {showMessage.status && (<div className={showMessage.success ? "bg-green-600 p-2 text-white" : "bg-red-600 p-2 text-white"}>{showMessage.content}</div>) }
             </WrapperPage>
     )
 }
