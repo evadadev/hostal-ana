@@ -102,7 +102,7 @@ const GalleryPage = () => {
                 {isModalOpen && (
                     <>
                     <FontAwesomeIcon icon={faXmark} size="2xl" color="white" className="fixed z-20 top-32 right-11 cursor-pointer" onClick={closeModal}/>
-                    <div className="fixed inset-0 gap-10 flex items-center justify-center z-10 bg-black-modal" >
+                    <div className="fixed top-24 inset-0 gap-10 flex items-center justify-center z-10 bg-black-modal" >
                             <FontAwesomeIcon icon={faAngleLeft} size="2xl" color="white" onClick={prevImg} className={imgModal.id === 1 ? "cursor-not-allowed" : "cursor-pointer"}/>
                             <img
                             className="flex w-[50%] " 
