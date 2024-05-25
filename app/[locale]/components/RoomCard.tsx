@@ -1,9 +1,8 @@
 import React from "react";
 import { Room } from "./room.vm"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faWifi, faRadio, faTv, faFan, faPhone, faBathtub } from "@fortawesome/free-solid-svg-icons";
+import {faWifi, faTv, faFan, faBathtub, faTemperatureArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
-
 
 interface Props {
     room: Room
@@ -27,10 +26,6 @@ export const RoomCard: React.FC<Props> = (props) => {
                         <p>{t('iconInternet')}</p>
                     </div>
                     <div className="flex flex-row gap-4 text-secundary">
-                    <FontAwesomeIcon icon={faRadio} />
-                        <p>{t('iconRadio')}</p>
-                    </div>
-                    <div className="flex flex-row gap-4 text-secundary">
                         <FontAwesomeIcon icon={faTv} />
                         <p>{t('iconTelevision')}</p>
                     </div>
@@ -39,8 +34,8 @@ export const RoomCard: React.FC<Props> = (props) => {
                         <p>{t('iconAireAcondicionado')}</p>
                     </div>
                     <div className="flex flex-row gap-4 text-secundary">
-                        <FontAwesomeIcon icon={faPhone} />
-                        <p>{t('iconTelefono')}</p>
+                        <FontAwesomeIcon icon={faTemperatureArrowUp} />
+                        <p>{t('iconCalefaccion')}</p>
                     </div>
                     <div className="flex flex-row gap-4 text-secundary">
                         <FontAwesomeIcon icon={faBathtub} />

@@ -6,36 +6,37 @@ import { WrapperPage } from "../components/WrapperPage";
 import Link from "next/link";
 
 const ContactPage = () => {
-    const [ data, setData] = React.useState({name: "", email: "", phone: "", message: "", option: "", accept: false});
     const [showMessage, setShowMessage] = React.useState({status: false, success: false, content: ""})
+    const [ dataForm, setDataForm] = React.useState({name: "", email: "", phone: "", message: "", option: "", accept: false});
     const { t } = useTranslation();
 
     useEffect(() => {
         document.title = t('contacto') + ' | Hostal Ana Nerja';
-        data.option = "Reservar"
+        dataForm.option = "Reservar"
     }, [])
-
+    
     const setFormData = (e: React.ChangeEvent<HTMLInputElement>, key: string) => {
-        setData({
-            ...data,
+        setDataForm({
+            ...dataForm,
             [key]: e.target.value,
         })
     }
     const setFormTextarea = (e: React.ChangeEvent<HTMLTextAreaElement>, key: string) => {
-        setData({
-            ...data,
+        setDataForm({
+            ...dataForm,
             [key]: e.target.value,
         })
     }
     const setFormsSelec = (e: React.ChangeEvent<HTMLSelectElement>, key: string) => {
-        setData({
-            ...data,
+        setDataForm({
+            ...dataForm,
             [key]: e.target.value,
         })
     }
     const setFormsChecked = (e: React.ChangeEvent<HTMLInputElement>, key: string) => {
-        setData({
-            ...data,
+        console.log(e)
+        setDataForm({
+            ...dataForm,
             [key]: e.target.checked,
         })
     }
@@ -45,7 +46,7 @@ const ContactPage = () => {
 
         const response = await fetch('api/send', {
             method: 'POST',
-            body: JSON.stringify(data)
+            body: JSON.stringify(dataForm)
         })
 
         const content = response.ok ? "El mensaje fue enviado correctamente" : "El mensaje no pudo ser enviado"
@@ -61,15 +62,15 @@ const ContactPage = () => {
                 <div className="flex flex-col items-center w-full gap-4 sm:grid-cols-6">
                     <div className="w-full">
                         <label htmlFor="username" className=" text-sm font-medium leading-6 text-secundary">{t('labelNombre')}</label>
-                        <input type="text" required value={data.name} onChange={(e) => setFormData(e, "name")} name="username" id="username" autoComplete="Nombre" className=" flex-1 w-full border-slate-300 text-secundary placeholder:text-grey-ligth focus:right-0 sm:text-sm sm:leading-6"/>
+                        <input type="text" required value={dataForm.name} onChange={(e) => setFormData(e, "name")} name="username" id="username" autoComplete="Nombre" className=" flex-1 w-full border-slate-300 text-secundary placeholder:text-grey-ligth focus:right-0 sm:text-sm sm:leading-6"/>
                     </div>
                     <div className="w-full">
                         <label htmlFor="email" className=" text-sm font-medium  text-secundary">Email*</label>
-                        <input type="email" required value={data.email} onChange={(e) => setFormData(e, "email")} name="email" id="email" autoComplete="Email" className=" flex-1 w-full border-slate-300 text-secundary placeholder:text-grey-ligth sm:text-sm sm:leading-6"/>
+                        <input type="email" required value={dataForm.email} onChange={(e) => setFormData(e, "email")} name="email" id="email" autoComplete="Email" className=" flex-1 w-full border-slate-300 text-secundary placeholder:text-grey-ligth sm:text-sm sm:leading-6"/>
                     </div>
                     <div className="w-full">
                         <label htmlFor="phone" className="text-sm font-medium  text-secundary">{t('labelTelefono')}</label>
-                        <input type="text" required value={data.phone} onChange={(e) => setFormData(e, "phone")} name="phone" id="phone" autoComplete="Phone" className="flex-1 w-full border-slate-300 text-secundary placeholder:text-grey-ligth sm:text-sm sm:leading-6"/>
+                        <input type="text" required value={dataForm.phone} onChange={(e) => setFormData(e, "phone")} name="phone" id="phone" autoComplete="Phone" className="flex-1 w-full border-slate-300 text-secundary placeholder:text-grey-ligth sm:text-sm sm:leading-6"/>
                     </div>
                     <div className="w-full">
                         <label htmlFor="affair" className="text-sm font-medium text-secundary">{t('labelAsunto')}</label>
@@ -81,10 +82,10 @@ const ContactPage = () => {
                     </div>
                     <div className="w-full">
                         <label htmlFor="message" className="text-sm font-medium leading-6 text-secundary">{t('labelMensaje')}</label>
-                        <textarea name="message" id="message" autoComplete="message" value={data.message} onChange={(e) => setFormTextarea(e, "message")} className="w-full flex-1 border-slate-300 text-secundary placeholder:text-grey-ligth focus:right-0 sm:text-sm sm:leading-6" />
+                        <textarea name="message" id="message" autoComplete="message" value={dataForm.message} onChange={(e) => setFormTextarea(e, "message")} className="w-full flex-1 border-slate-300 text-secundary placeholder:text-grey-ligth focus:right-0 sm:text-sm sm:leading-6" />
                     </div>
                     <div className="flex flex-row">
-                        <input type="checkbox" checked={data.accept} required onChange={(e) => setFormsChecked(e, "accept")} className="h-4 w-4 rounded  border-slate-300 text-secundary"/>
+                        <input type="checkbox" checked={dataForm.accept} required onChange={(e) => setFormsChecked(e, "accept")} className="h-4 w-4 rounded  border-slate-300 text-secundary"/>
                         <p className="ml-2 text-sm font-medium text-primary">{t('politicaPrivacidad')}
                             <Link href="/politicaPrivacidad" className="underline-offset-1 font-bold text-primary cursor-pointer">{t('pPrivacidad')}</Link>
                         </p>                  
