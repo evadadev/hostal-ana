@@ -88,7 +88,7 @@ const GalleryPage = () => {
         //     image: "/patio.jpg"
         // },
         {
-            id: 11,
+            id: 10,
             image: "aseo.jpg"
         }
     ]
