@@ -1,4 +1,3 @@
-'use client'
 import React, { useState } from "react";
 import { ES, GB } from "country-flag-icons/react/1x1";
 import i18n from "../i18n";
